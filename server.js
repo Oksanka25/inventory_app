@@ -36,6 +36,12 @@ app.use((req, res, next) => {
 // express.static helps express find where certain files are located
 app.use(express.static('public'))
 
+// CONTROLLERS
+
+
+//  "Home" route 
+app.get('/', (request, response) => response.render('Home'))
+
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
