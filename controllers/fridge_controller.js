@@ -30,6 +30,24 @@ router.get('/new', (req, res) => {
     res.render('New')
 })
 
+// SHOW route 
+router.get('/:id/', async (req, res, next) => {
+    try {
+        const foundFridgeItem = await db.Fridge.findById(req.params.id)
+        // const allReviews = await db.Review.find({ fridgeItem: req.params.id })
+        // console.log(allReviews.length, 'Items Found');
+        const context = {
+            oneItem: foundFridgeItem,
+            // reviews: allReviews,
+            message: "Hello there"
+        }
+        return res.render('Show', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 // CREATE route 
 router.post('/', async (req, res, next) => {
@@ -45,6 +63,7 @@ router.post('/', async (req, res, next) => {
         return next();
     }
 })
+
 
 
 module.exports = router
