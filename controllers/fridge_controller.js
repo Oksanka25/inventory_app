@@ -33,7 +33,9 @@ router.get('/new', (req, res) => {
 // SHOW route 
 router.get('/:id/', async (req, res, next) => {
     try {
-        const foundFridgeItem = await db.Fridge.findById(req.params.id)
+        const foundFridgeItem = await db.Fridge.findById(req.params.id).populate({
+            path: 'fridgeData'
+        })
         const allReviews = await db.Review.find({ fridgeItem: req.params.id })
         console.log(allReviews.length, 'Items Found');
         const context = {
@@ -116,4 +118,4 @@ router.put('/:id', async (req, res, next) => {
 
 
 
-module.exports = router
+module.exports = router;

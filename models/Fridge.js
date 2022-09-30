@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Review } = require('.');
 
 const fridgeSchema = new mongoose.Schema({
     name: {
@@ -15,13 +16,30 @@ const fridgeSchema = new mongoose.Schema({
     },
     category: {
         type: String,
+    },
+    timestamps: {
+        type: Date,
+        default: Date.now()
     }
-},
-    {
-        timestamps: true
-    }
+}, {
+    toJSON: {
+        virtuals: true
+    },
+    toObject: {
+        virtuals: true
+    },
+}
+    // {
+    //     timestamps: true
+    // },
+
 );
 
+fridgeSchema.virtual('fridgeData', {
+    ref: 'Review',
+    localField: '_id',
+    foreignField: 'fridgeItem'
+})
 
 const Fridge = mongoose.model('Fridge', fridgeSchema);
 

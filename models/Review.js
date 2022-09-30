@@ -12,7 +12,12 @@ const reviewSchema = new mongoose.Schema({
     fridgeItem: {
         type: mongoose.Types.ObjectId,
         ref: 'Fridge'
-    }
+    },
+    beverageItem:
+    {
+        type: mongoose.Types.ObjectId,
+        ref: 'Beverage'
+    },
 },
     {
         timestamps: true

@@ -4,6 +4,7 @@ class Show extends React.Component {
     render() {
         const { oneItem } = this.props;
         const { reviews } = this.props;
+        console.log(reviews);
         return (
             <DefaultLayout title={"Fridge Inventory"}>
                 <div>
@@ -33,7 +34,8 @@ class Show extends React.Component {
                     <a href="/fridge"> Back to the Full Fridge</a>
 
 
-/// Edit / delete a review
+
+
                     <section>
                         <h2>Reviews of {oneItem.name}</h2>
 
@@ -54,7 +56,7 @@ class Show extends React.Component {
                         })}
 
                     </section>
-                    <section>
+                    <section section >
                         <h3>Add a Review:</h3>
                         <form method="POST" action="/review">
                             <label for="comment"> Comment: </label>
@@ -64,14 +66,13 @@ class Show extends React.Component {
                             <input id="rating" name="rating" type="number" min="0" step="1" max="5" required />
                             <br />
                             <label for="fridgeItem"> Item: </label>
-                            Item:
                             <input type="fridgeItem" name="fridgeItem" value={oneItem._id} required /> <br />
                             <input type="submit" value="Add this Item..." />
                         </form>
-                    </section>
+                    </section >
 
-                </div>
-            </DefaultLayout>
+                </div >
+            </DefaultLayout >
         );
     }
 }

@@ -6,8 +6,8 @@ class Home extends React.Component {
             <DefaultLayout title={"Welcome to Inventory App"}>
                 <div>
                     <button > <a href="/fridge"> Fridge</a></button>
-                    <button > <a href="/beverages"> Beverages</a></button>
-                    <button > <a href="/snacks"> Snacks</a></button>
+                    <button > <a href="/beverage"> Beverages</a></button>
+                    <button > <a href="/snack"> Snacks</a></button>
                 </div>
             </DefaultLayout>
         );
