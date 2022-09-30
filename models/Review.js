@@ -18,6 +18,11 @@ const reviewSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'Beverage'
     },
+    snackItem:
+    {
+        type: mongoose.Types.ObjectId,
+        ref: 'Snack'
+    },
 },
     {
         timestamps: true

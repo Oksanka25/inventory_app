@@ -3,5 +3,6 @@ module.exports = {
     review: require('./review_controller'),
     beverage: require('./beverage_controller'),
     comment: require('./comment_controller'),
-    // snack: require('./snack_controller'),
+    snack: require('./snack_controller'),
+    feedback: require('./feedback_controller'),
 }

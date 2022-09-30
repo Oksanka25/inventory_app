@@ -12,8 +12,8 @@ class Edit extends React.Component {
                     <label for="name"> Item Name: </label>
                     <input id="name" name="name" type="text" defaultValue={this.props.beverageItem.name} required />
                     <br />
-                    <label for="type"> Item Name: </label>
-                    <input id="type" name="type" type="text" defaultValue={this.props.beverageItem.name} required />
+                    <label for="type"> Type: </label>
+                    <input id="type" name="type" type="text" defaultValue={this.props.beverageItem.type} required />
                     <br />
                     <label for="quantity"> Quantity: </label>
                     <input id="quantity" name="quantity" type="number" defaultValue={this.props.beverageItem.quantity} required />

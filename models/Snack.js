@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
-const beverageSchema = new mongoose.Schema({
+const snackSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'name cannot be empty :(']
+        required: [true, 'name cannot be empty']
     },
     type: {
         type: String,
-        required: [true, 'name cannot be empty :(']
+        required: [true, 'name cannot be empty']
     },
     quantity: {
         type: Number,
         required: [true, 'quantity cannot be empty!']
     },
-    hasAlcohol: {
+    isHealthy: {
         type: Boolean
     },
     expirationDate: {
@@ -29,6 +29,7 @@ const beverageSchema = new mongoose.Schema({
     {
         timestamps: true
     },
+
     {
         toJSON: {
             virtuals: true
@@ -38,11 +39,11 @@ const beverageSchema = new mongoose.Schema({
         },
     });
 
-beverageSchema.virtual('beverageData', {
+snackSchema.virtual('snackData', {
     ref: 'Review',
     localField: '_id',
-    foreignField: 'beverageItem'
+    foreignField: 'snackItem'
 })
 
-const Beverage = mongoose.model('Beverage', beverageSchema);
-module.exports = Beverage;
+const Snack = mongoose.model('Snack', snackSchema);
+module.exports = Snack;

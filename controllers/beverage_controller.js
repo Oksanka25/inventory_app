@@ -105,7 +105,11 @@ router.delete('/:id', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
     try {
-
+        if (req.body.hasAlcohol === "on") {
+            req.body.hasAlcohol = true;
+        } else {
+            req.body.hasAlcohol = false;
+        }
         const updatedBeverageItem = await db.Beverage.findByIdAndUpdate(req.params.id, req.body);
         console.log(updatedBeverageItem);
         return res.redirect(`/beverage`)

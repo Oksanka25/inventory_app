@@ -4,7 +4,7 @@ const { Review } = require('.');
 const fridgeSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'name cannot be empty :(']
+        required: [true, 'name cannot be empty']
     },
     quantity: {
         type: Number,
@@ -17,21 +17,22 @@ const fridgeSchema = new mongoose.Schema({
     category: {
         type: String,
     },
-    timestamps: {
-        type: Date,
-        default: Date.now()
-    }
-}, {
-    toJSON: {
-        virtuals: true
+    // timestamps: {
+    //     type: Date,
+    //     default: Date.now()
+    // }
+},
+    {
+        timestamps: true
     },
-    toObject: {
-        virtuals: true
+    {
+        toJSON: {
+            virtuals: true
+        },
+        toObject: {
+            virtuals: true
+        },
     },
-}
-    // {
-    //     timestamps: true
-    // },
 
 );
 

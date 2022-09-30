@@ -41,6 +41,8 @@ app.use('/fridge', controllers.fridge);
 app.use('/review', controllers.review);
 app.use('/beverage', controllers.beverage);
 app.use('/comment', controllers.comment);
+app.use('/snack', controllers.snack);
+app.use('/feedback', controllers.feedback);
 
 //  "Home" route 
 app.get('/', (req, res) => res.render('Home'))
