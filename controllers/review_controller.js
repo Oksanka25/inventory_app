@@ -96,6 +96,19 @@ router.put('/:reviewId', async (req, res, next) => {
     }
 })
 
+// destroy - delete 
+router.delete('/:reviewId', async (req, res, next) => {
+    try {
+        const deleteReview = await db.Review.findByIdAndDelete(req.params.reviewId)
+        console.log(deleteReview.id, "<<review|", deleteReview.fridgeItem, "<<fridgeItem")
+        res.redirect('/fridge/' + deleteReview.fridgeItem)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 
 

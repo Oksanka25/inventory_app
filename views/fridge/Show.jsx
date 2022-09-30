@@ -47,7 +47,7 @@ class Show extends React.Component {
                                 <button>
                                     <a href={`/review/${review._id}/edit`}> Edit Review</a>
                                 </button>
-                                <form action={`/reviews/${review._id}?_method=DELETE`} method="POST">
+                                <form action={`/review/${review._id}?_method=DELETE`} method="POST">
                                     <input type="submit" value="Delete Review" />
                                 </form>
                             </>
