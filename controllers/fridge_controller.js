@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
         const fridgeItems = await db.Fridge.find({});
         const context = { fridgeItems }
         console.log(fridgeItems);
-        return res.render('Index', context);
+        return res.render('fridge/Index', context);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -27,7 +27,7 @@ router.get('/', async (req, res, next) => {
 // NEW fridge item
 
 router.get('/new', (req, res) => {
-    res.render('New')
+    res.render('fridge/New')
 })
 
 // SHOW route 
@@ -41,13 +41,30 @@ router.get('/:id/', async (req, res, next) => {
             // reviews: allReviews,
             message: "Hello there"
         }
-        return res.render('Show', context)
+        return res.render('fridge/Show', context)
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
 })
+
+// EDIT route
+router.get('/:id/edit', async (req, res, next) => {
+    try {
+        const updatedFridgeItem = await db.Fridge.findById(req.params.id);
+        console.log(updatedFridgeItem);
+        const context = {
+            fridgeItem: updatedFridgeItem
+        }
+        return res.render('fridge/Edit', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 // CREATE route 
 router.post('/', async (req, res, next) => {
@@ -63,6 +80,23 @@ router.post('/', async (req, res, next) => {
         return next();
     }
 })
+
+
+// UPDATE route
+
+router.put('/:id', async (req, res, next) => {
+    try {
+
+        const updatedFridgeItem = await db.Fridge.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updatedFridgeItem);
+        return res.redirect(`/fridge`)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 
 

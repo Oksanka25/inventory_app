@@ -1,9 +1,9 @@
 const React = require("react");
-const DefaultLayout = require("./layouts/default");
+const DefaultLayout = require("../layouts/default");
 class Show extends React.Component {
     render() {
         const { oneItem } = this.props;
-        // const { reviews } = this.props;
+        const { reviews } = this.props;
         return (
             <DefaultLayout title={"Fridge Inventory"}>
                 <div>
@@ -31,6 +31,9 @@ class Show extends React.Component {
                     <p>Item added to the list: {new Date(oneItem.createdAt).toLocaleString()} </p>
                     <p>Item last updated: {new Date(oneItem.updatedAt).toLocaleString()} </p> <br />
                     <a href="/fridge"> Back to the Full Fridge</a>
+
+
+/// Edit / delete a review
 
                 </div>
             </DefaultLayout>

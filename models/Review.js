@@ -8,6 +8,10 @@ const reviewSchema = new mongoose.Schema({
     rating: {
         type: Number,
         required: [true, 'rate cannot be empty!']
+    },
+    fridgeItem: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Fridge'
     }
 },
     {

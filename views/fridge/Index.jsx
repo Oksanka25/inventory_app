@@ -1,5 +1,5 @@
 const React = require('react')
-const DefaultLayout = require('./layouts/Default')
+const DefaultLayout = require('../layouts/Default')
 
 class Index extends React.Component {
     render() {
