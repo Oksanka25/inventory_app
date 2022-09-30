@@ -82,6 +82,22 @@ router.post('/', async (req, res, next) => {
 })
 
 
+// DELETE route 
+
+router.delete('/:id', async (req, res, next) => {
+    try {
+        const deletedFridgeItem = await db.Fridge.findByIdAndDelete(req.params.id);
+        const deletedReview = await db.Review.deleteMany({ fridgeItem: req.params.id })
+        console.log(`The deleted fridge item is ${deletedFridgeItem}`)
+        return res.redirect('/fridge')
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+
 // UPDATE route
 
 router.put('/:id', async (req, res, next) => {
