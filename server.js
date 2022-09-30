@@ -38,7 +38,7 @@ app.use(express.static('public'))
 
 // CONTROLLERS
 app.use('/fridge', controllers.fridge)
-// app.use('/review', controllers.review)
+app.use('/review', controllers.review)
 
 //  "Home" route 
 app.get('/', (req, res) => res.render('Home'))

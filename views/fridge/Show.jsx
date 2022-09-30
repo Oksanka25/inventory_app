@@ -34,6 +34,41 @@ class Show extends React.Component {
 
 
 /// Edit / delete a review
+                    <section>
+                        <h2>Reviews of {oneItem.name}</h2>
+
+                        {reviews.map((review, i) => {
+                            return <>
+                                <p> Comment: {review.comment}</p>
+                                <h3> Rating: {review.rating}</h3>
+                                <p>Review added on: {new Date(review.createdAt).toLocaleString()} </p>
+                                <p>Review last updated: {new Date(review.updatedAt).toLocaleString()} </p> <br />
+                                {/* // edit */}
+                                <button>
+                                    <a href={`/review/${review._id}/edit`}> Edit Review</a>
+                                </button>
+                                <form action={`/reviews/${review._id}?_method=DELETE`} method="POST">
+                                    <input type="submit" value="Delete Review" />
+                                </form>
+                            </>
+                        })}
+
+                    </section>
+                    <section>
+                        <h3>Add a Review:</h3>
+                        <form method="POST" action="/review">
+                            <label for="comment"> Comment: </label>
+                            <input id="comment" name="comment" type="textarea" required />
+                            <br />
+                            <label for="rating"> Rating: </label>
+                            <input id="rating" name="rating" type="number" min="0" step="1" max="5" required />
+                            <br />
+                            <label for="fridgeItem"> Item: </label>
+                            Item:
+                            <input type="fridgeItem" name="fridgeItem" value={oneItem._id} required /> <br />
+                            <input type="submit" value="Add this Item..." />
+                        </form>
+                    </section>
 
                 </div>
             </DefaultLayout>

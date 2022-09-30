@@ -34,11 +34,11 @@ router.get('/new', (req, res) => {
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundFridgeItem = await db.Fridge.findById(req.params.id)
-        // const allReviews = await db.Review.find({ fridgeItem: req.params.id })
-        // console.log(allReviews.length, 'Items Found');
+        const allReviews = await db.Review.find({ fridgeItem: req.params.id })
+        console.log(allReviews.length, 'Items Found');
         const context = {
             oneItem: foundFridgeItem,
-            // reviews: allReviews,
+            reviews: allReviews,
             message: "Hello there"
         }
         return res.render('fridge/Show', context)
