@@ -3,29 +3,39 @@ const DefaultLayout = require("../layouts/default");
 class New extends React.Component {
     render() {
         return (
-            <DefaultLayout title={"Add a New Item to your Beverages List "}>
-                <div>
-                    <form action="/beverage" method="POST">
-                        <label for="name"> Name: </label>
-                        <input id="name" name="name" type="text" required />
-                        <br />
-                        <label for="type"> Type: </label>
-                        <input id="type" name="type" type="text" required />
-                        <br />
-                        <label for="quantity"> Quantity: </label>
-                        <input id="quantity" name="quantity" type="number" required />
-                        <br />
-                        <label for="hasAlcohol"> Alcohol: </label>
-                        <input type="checkbox" name="hasAlcohol" />
-
-                        <br />
-                        <label for="expirationDate"> Exp. Date: </label>
-                        <input id="expirationDate" name="expirationDate" type="date" required />
-                        <br />
-                        <input type="submit" name="" value="Add an Item" />
-                    </form>
+            <DefaultLayout>
+                <div class="title-container">
+                    <h1 class="title"> Add a New Item to your Beverage List</h1>
                 </div>
-            </DefaultLayout>
+                <div class="new-form">
+                    <form action="/beverage" method="POST">
+                        <div class="mt-2 mb-1 col-sm-13">
+                            <label for="name" class="form-label"> Brand: </label>
+                            <input id="name" name="name" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-2 col-sm-18">
+                            <label for="type" class="form-label" > Type: </label>
+                            <input id="type" name="type" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-2 col-sm-18">
+                            <label for="quantity" class="form-label"> Quantity: </label>
+                            <input id="quantity" name="quantity" type="number" class="form-control" min="0" required />
+                        </div>
+                        <div class="mb-2 col-sm-18">
+                            <label for="expirationDate" class="form-label"> Exp. Date: </label>
+                            <input id="expirationDate" name="expirationDate" type="date" class="form-control" required />
+                        </div>
+                        <div class="mb-2 form-check form-switch ">
+                            <label for="hasAlcohol" class="form-check-label">Alcohol </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="hasAlcohol" />
+                        </div>
+                        <br />
+                        <button class="add-btn" type="submit">
+                            Add Item
+                        </button>
+                    </form>
+                </div >
+            </DefaultLayout >
         );
     }
 }
