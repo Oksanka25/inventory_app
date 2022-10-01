@@ -10,7 +10,7 @@ class New extends React.Component {
                 <div class="new-form">
                     <form action="/fridge" method="POST">
                         <div class="mt-2 mb-1 col-sm-13">
-                            <label for="name" class="form-label"> Brand: </label>
+                            <label for="name" class="form-label"> Name: </label>
                             <input id="name" name="name" type="text" class="form-control" required />
                         </div>
                         <div class="mb-2 col-sm-18">
