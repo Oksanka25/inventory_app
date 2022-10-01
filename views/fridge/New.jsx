@@ -16,7 +16,16 @@ class New extends React.Component {
                         <input id="expirationDate" name="expirationDate" type="date" required />
                         <br />
                         <label for="category"> Category: </label>
-                        <input id="category" name="category" type="text" />
+                        <select name="category">
+                            <option value="bread"> Bread</option>
+                            <option value="meat">Meat</option>
+                            <option value="seafood">Seafood</option>
+                            <option value="produce">Produce</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="deli">Deli</option>
+                            <option value="other">Other</option>
+                        </select>
+                        {/* <input id="category" name="category" type="text" /> */}
                         <br />
                         <input type="submit" name="" value="Add an Item" />
                     </form>

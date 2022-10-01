@@ -19,7 +19,15 @@ class Edit extends React.Component {
                     <input id="expirationDate" name="expirationDate" type="date" defaultValue={this.props.fridgeItem.expirationDate.toLocaleString()} required />
                     <br />
                     <label for="category"> Category: </label>
-                    <input id="category" name="category" type="text" defaultValue={this.props.fridgeItem.category} />
+                    <select name="category" defaultValue={this.props.fridgeItem.category}>
+                        <option value="bread"> Bread</option>
+                        <option value="meat">Meat</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="produce">Produce</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="deli">Deli</option>
+                        <option value="other">Other</option>
+                    </select>
                     <br />
                     <input type="submit" name="" value="Update an Item" />
 
