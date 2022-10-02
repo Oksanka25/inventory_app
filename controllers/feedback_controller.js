@@ -7,7 +7,7 @@ const router = express.Router()
 // MODELS
 const db = require('../models')
 
-// Index route 
+// Index route Snacks
 router.get('/', async (req, res, next) => {
     // res.send('hitting review index')
     try {
@@ -99,7 +99,7 @@ router.put('/:feedbackId', async (req, res, next) => {
 router.delete('/:feedbackId', async (req, res, next) => {
     try {
         const deleteFeedback = await db.Review.findByIdAndDelete(req.params.feedbackId)
-        console.log(deleteFeedback.id, "<<review|", deleteFeedback.snackItem, "<<snackItem")
+        console.log(deleteFeedback.id, "<<feedback|", deleteFeedback.snackItem, "<<snackItem")
         res.redirect('/snack/' + deleteFeedback.snackItem)
     } catch (error) {
         console.log(error);

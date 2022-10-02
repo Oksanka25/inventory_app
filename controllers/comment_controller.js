@@ -7,9 +7,8 @@ const router = express.Router()
 // MODELS
 const db = require('../models')
 
-// Index route 
+// Index route  Beverages
 router.get('/', async (req, res, next) => {
-    // res.send('hitting review index')
     try {
         const allComments = await db.Review.find({})
         res.send(allComments)
@@ -23,7 +22,6 @@ router.get('/', async (req, res, next) => {
 
 // NEW review route
 router.get('/new', async (req, res, next) => {
-
     try {
         const allComments = await db.Review.find({})
         // console.log(allComments)

@@ -1,5 +1,6 @@
 const React = require("react");
 const DefaultLayout = require("../layouts/Default");
+const formatDate = require('../../utils/format-date');
 
 class Edit extends React.Component {
     render() {
@@ -23,7 +24,7 @@ class Edit extends React.Component {
                         </div>
                         <div class="mb-2 col-sm-18">
                             <label for="expirationDate" class="form-label" > Exp. Date: </label>
-                            <input id="expirationDate" name="expirationDate" type="date" class="form-control" defaultValue={this.props.fridgeItem.expirationDate.toLocaleString()} required />
+                            <input id="expirationDate" name="expirationDate" type="date" class="form-control" defaultValue={formatDate(this.props.fridgeItem.expirationDate)} required />
                         </div>
                         <div class="mb-2 col-sm-18">
                             <label for="category" class="form-label"> Category: </label>

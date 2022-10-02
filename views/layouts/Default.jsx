@@ -17,7 +17,7 @@ class DefaultLayout extends React.Component {
                         <nav class="navbar navbar-expand-lg bg-light">
                             <div class="container-fluid">
                                 <button class="brand-btn">
-                                    <a class="navbar-brand" href="/">Inventory</a>
+                                    <a class="navbar-brand" href="/">InventoryApp</a>
                                 </button>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@ class DefaultLayout extends React.Component {
                                     <ul class=" navbar-nav me-auto mb-2 ms-5 mb-lg-0">
                                         <li class="nav-item ms-5">
                                             <button class="nav-btn">
-                                                <a class="nav-link active" aria-current="page" href="/fridge">Fridge</a>
+                                                <a class="nav-link active" aria-current="page" href="/fridge">Food</a>
                                             </button>
                                         </li>
                                         <li class="nav-item ms-3">
