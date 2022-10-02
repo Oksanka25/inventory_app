@@ -13,7 +13,7 @@ class Show extends React.Component {
                     <div class="card" style={{ width: '25rem', marginLeft: "20%", marginRight: '10%', height: '25rem', padding: '1rem' }}>
                         <div class="card-body">
                             <h4 class="card-title"> Name: {oneItem.name} </h4>
-                            <h4 class="card-subtitle mb-2"> Type: {oneItem.type} </h4>
+                            <h4 class="card-title"> Brand: {oneItem.brand} </h4>
                             <h5 class="card-subtitle mb-2"> Quantity: {oneItem.quantity} </h5>
                             <h5 class="card-subtitle mb-2"> Category: {oneItem.category} </h5>
                             <h5 class="card-subtitle mb-2"> Exp.Date: {formatDate(new Date(oneItem.expirationDate))} </h5>

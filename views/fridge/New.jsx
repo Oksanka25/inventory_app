@@ -13,9 +13,13 @@ class New extends React.Component {
                             <label for="name" class="form-label"> Name: </label>
                             <input id="name" name="name" type="text" class="form-control" required />
                         </div>
+                        <div class="mt-2 mb-1 col-sm-13">
+                            <label for="brand" class="form-label"> Brand: </label>
+                            <input id="brand" name="brand" type="text" class="form-control" required />
+                        </div>
                         <div class="mb-2 col-sm-18">
                             <label for="quantity" class="form-label"> Quantity: </label>
-                            <input id="quantity" name="quantity" type="number" class="form-control" min="0" required />
+                            <input id="quantity" name="quantity" type="number" min="0" class="form-control" required />
                         </div>
                         <div class="mb-2 col-sm-18">
                             <label for="expirationDate" class="form-label" > Exp. Date: </label>
@@ -27,9 +31,11 @@ class New extends React.Component {
                                 <option value="bread"> Bread</option>
                                 <option value="meat">Meat</option>
                                 <option value="seafood">Seafood</option>
+                                <option value="frozen">Frozen</option>
                                 <option value="produce">Produce</option>
                                 <option value="dairy">Dairy</option>
                                 <option value="deli">Deli</option>
+                                <option value="bakery">Bakery</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>

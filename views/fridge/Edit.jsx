@@ -18,6 +18,10 @@ class Edit extends React.Component {
                             <label for="name" class="form-label"> Name: </label>
                             <input id="name" name="name" type="text" class="form-control" defaultValue={this.props.fridgeItem.name} required />
                         </div>
+                        <div class="mt-2 mb-1 col-sm-13">
+                            <label for="type" class="form-label"> Brand: </label>
+                            <input id="type" name="type" type="text" class="form-control" defaultValue={this.props.fridgeItem.brand} required />
+                        </div>
                         <div class="mb-2 col-sm-18">
                             <label for="quantity" class="form-label"> Quantity: </label>
                             <input id="quantity" name="quantity" type="number" class="form-control" min="0" defaultValue={this.props.fridgeItem.quantity} required />
@@ -32,9 +36,11 @@ class Edit extends React.Component {
                                 <option value="bread"> Bread</option>
                                 <option value="meat">Meat</option>
                                 <option value="seafood">Seafood</option>
+                                <option value="frozen">Frozen</option>
                                 <option value="produce">Produce</option>
                                 <option value="dairy">Dairy</option>
                                 <option value="deli">Deli</option>
+                                <option value="bakery">Bakery</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>

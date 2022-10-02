@@ -39,10 +39,10 @@ class DefaultLayout extends React.Component {
                                                 <a class="nav-link active" aria-current="page" href="/snack">Snacks</a>
                                             </button>
                                         </li>
-                                        <li class="nav-item ms-5">
+                                        {/* <li class="nav-item ms-5">
                                             <a class="nav-link active" aria-current="page" href="#">Login</a>
-                                        </li>
-                                        <div class="dot"></div>
+                                        </li> */}
+
                                     </ul>
                                 </div>
                             </div>

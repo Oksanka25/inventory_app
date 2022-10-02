@@ -6,6 +6,10 @@ const fridgeSchema = new mongoose.Schema({
         type: String,
         required: [true, 'name cannot be empty']
     },
+    brand: {
+        type: String,
+        required: [true, 'name cannot be empty']
+    },
     quantity: {
         type: Number,
         required: [true, 'quantity cannot be empty!']
