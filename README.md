@@ -27,7 +27,7 @@ Key features:
 
 ## Author
 
-- [Oksana Kalyniak](https://github.com/Oksanka25)
+[Oksana Kalyniak](https://github.com/Oksanka25)
 
 ## Built With
 - HTML
